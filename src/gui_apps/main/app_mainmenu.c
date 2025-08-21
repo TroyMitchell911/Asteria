@@ -1463,11 +1463,11 @@ static app_mainmenu_item_t *new_app_item(char *name, const lv_img_dsc_t *icon, c
 #ifdef MM_CUST_TRAN_ANIMATION
 
 
-static CUST_ANIM_TYPE_E cust_anim_type = CUST_ANIM_TYPE_0;
+static CUST_ANIM_TYPE_E cust_anim_type = CUST_ANIM_TYPE_3;
 static void mm_trans_anim_init(void)
 {
     //cust_anim_type = CUST_ANIM_TYPE_3; //Fix trans animation
-    cust_trans_anim_config(cust_anim_type++, NULL);
+    cust_trans_anim_config(cust_anim_type, NULL);
 //Avoid animation crash
 #if (LV_HOR_RES_MAX > 512)||(LV_VER_RES_MAX > 512)
     if (cust_anim_type == CUST_ANIM_TYPE_3)  cust_anim_type++;
