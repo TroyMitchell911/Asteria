@@ -1,0 +1,10 @@
+import os
+from building import *
+
+cwd = GetCurrentDir()
+
+wf_spring_wreath_src = Glob('*.c')
+
+wf_spring_wreath_group = DefineGroup('resource', wf_spring_wreath_src, depend = ['PKG_USING_LITTLEVGL2RTT'])
+
+Return ('wf_spring_wreath_group')

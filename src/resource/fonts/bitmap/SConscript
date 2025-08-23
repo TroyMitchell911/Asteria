@@ -10,7 +10,9 @@ inc = []
 group=[]
 
 
-src += Glob('*.c')
+#src += Glob('*.c')
+src += Glob('ui_font_OpenSansMedium96.c')
+src += Glob('ui_font_OpenSansMediumItalic24.c')
 
 LOCAL_CCFLAGS = ''
 

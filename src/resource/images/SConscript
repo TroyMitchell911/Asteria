@@ -16,6 +16,7 @@ objs_no_ezip = Glob('common/no_ezip/*.png')
 objs_no_ezip += Glob('common/no_ezip/*.gif')
 objs_large_ezip += Glob('common/large_ezip/*.png')
 objs_large_ezip += Glob('common/large_ezip/*.gif')
+objs_large_ezip += Glob('wf/large_ezip/*.png')
 
 def align_to_power_of_two_and_str(num):
     power = 1

@@ -26,7 +26,10 @@ objs = Glob('freetype/{}.ttf'.format(font_name))
 objs = Env.FontFile(objs)
 
 if GetOption('no_cc'):
-    objs = []
+  objs = []
+
+bitmap_objs = SConscript(os.path.join(cwd, 'bitmap/SConscript'), variant_dir="bitmap", duplicate=0)
+objs.extend(bitmap_objs)
 
 objs = DefineGroup('resource', objs, depend = ['PKG_USING_LITTLEVGL2RTT'], CPPDEFINES = CPPDEFINES)  
 
