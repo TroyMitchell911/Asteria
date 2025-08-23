@@ -2,5 +2,6 @@ project/__pycache__/
 project/build_sf32lb52-lchspi-ulp_hcpu/
 project/.sconsign.dblite
 project/compile_commands.json
+project/Kconfig.tmp
 src/.cache/
 src/compile_commands.json
