@@ -229,6 +229,10 @@ static rt_int32_t init(lv_obj_t *parent)
 	p_clk_simple->bg = lv_img_create(parent);
 	lv_img_set_src(p_clk_simple->bg, LV_EXT_IMG_GET(clock_simple_bg));
 	lv_obj_align(p_clk_simple->bg, LV_ALIGN_CENTER, 0, 0);
+	lv_obj_set_size(p_clk_simple->bg,
+			lv_obj_get_width(parent),
+			lv_obj_get_height(parent));
+	lv_obj_clear_flag(p_clk_simple->bg, LV_OBJ_FLAG_SCROLLABLE);
 
 #ifdef ENABLE_MASKED_IMAGE
 	p_clk_simple->masked_img_obj = lv_img_create(p_clk_simple->bg);
@@ -248,7 +252,7 @@ static rt_int32_t init(lv_obj_t *parent)
 	lv_obj_align(p_clk_simple->masked_img_obj, LV_ALIGN_TOP_MID, 0, 100);
 	lv_obj_add_event_cb(p_clk_simple->masked_img_obj, add_mask_event_cb,
 			    LV_EVENT_ALL, NULL);
-	lv_obj_add_flag(p_clk_simple->masked_img_obj, LV_OBJ_FLAG_CLICKABLE);
+	/*lv_obj_add_flag(p_clk_simple->masked_img_obj, LV_OBJ_FLAG_CLICKABLE);*/
 	lv_obj_add_event_cb(p_clk_simple->bg, bg_img_event_cb, LV_EVENT_ALL,
 			    NULL);
 	lv_obj_add_flag(p_clk_simple->bg, LV_OBJ_FLAG_CLICKABLE);
@@ -256,8 +260,8 @@ static rt_int32_t init(lv_obj_t *parent)
 #endif /* ENABLE_MASKED_IMAGE */
 
 	//lv_obj_set_snapshot(p_clk_simple->bg, true);
-	p_clk_simple->hour_hand = lv_img_create(p_clk_simple->bg);
-	p_clk_simple->minute_hand = lv_img_create(p_clk_simple->bg);
+	p_clk_simple->hour_hand = lv_img_create(parent);
+	p_clk_simple->minute_hand = lv_img_create(parent);
 	p_clk_simple->second_hand = lv_img_create(parent);
 
 	lv_img_set_src(p_clk_simple->hour_hand,
